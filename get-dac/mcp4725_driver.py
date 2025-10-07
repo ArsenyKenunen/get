@@ -26,10 +26,10 @@ class MCP4725:
             print(f"number: {number}, data to i2c: [0x{(self.address << 1):02X}, 0x{first_byte:02X}, 0x{second_byte:02X}]\n")
 
     def setvoltage(self, voltage):
-        self.setnumber(int(voltage/self.dynamic_range * 4096))
+        self.setnumber(int(voltage/self.dynamic_range * 4096 - 1))
     
 if __name__ == "__main__":
-    dac = MCP4725(5, 0x61, True)
+    dac = MCP4725(5.16, 0x61, True)
     try:
         while True:
             try:

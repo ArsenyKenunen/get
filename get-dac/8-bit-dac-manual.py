@@ -6,7 +6,7 @@ gpio.setmode(gpio.BCM)
 dac = [16, 20, 21, 25, 26, 17, 27, 22]
 gpio.setup(dac, gpio.OUT)
 
-dynamic_range = 3.3
+dynamic_range = 3.15
 
 def voltage_to_number(voltage):
     if not (0.0 <= voltage <= dynamic_range):

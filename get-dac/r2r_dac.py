@@ -20,7 +20,11 @@ class R2R_DAC:
         for i in range(8):
             gpio.output(self.bits[i], dec2bin(number)[i])
     def setvoltage(self, voltage):
-        self.setnumber( int(voltage / self.dynamic_range * 255))
+        if not (0.0 <= voltage <= self.dynamic_range):
+            print(f"voltage exceeds the DAC dynamic range (0.0 - {dynamic_range:.2}V)")
+            print("voltage set to 0V")
+            return 0
+        self.setnumber( int(round(voltage / self.dynamic_range * 255)))
 
 if __name__ == "__main__":
     try:
@@ -35,3 +39,5 @@ if __name__ == "__main__":
                 print("no correct input, try again\n")
     finally:
         dac.deinit()
+#Vref - 3.186
+#max voltage - 3.162
