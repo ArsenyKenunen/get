@@ -2,8 +2,8 @@ import r2r_dac as r2r
 from signal_generator import get_triangle_wave_amplitude, wait_for_sampling_period
 import time
 
-amplitude = 3.1
-signal_frequency = 10
+amplitude = 1
+signal_frequency = 1
 sampling_frequency = 1000
 
 if __name__ == "__main__":

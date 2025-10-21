@@ -3,7 +3,7 @@ from signal_generator import get_sin_wave_amplitude, wait_for_sampling_period
 import time
 
 amplitude = 3.1
-signal_frequency = 10
+signal_frequency = 0.01
 sampling_frequency = 1000
 
 if __name__ == "__main__":

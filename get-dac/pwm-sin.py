@@ -4,7 +4,7 @@ import time
 
 amplitude = 3.1
 signal_frequency = 10
-sampling_frequency = 1000
+sampling_frequency = 100
 
 if __name__ == "__main__":
     try:
